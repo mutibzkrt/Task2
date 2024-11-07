@@ -1,0 +1,51 @@
+##Muhammet Bozkurt##
+# Ping Monitor - 512 IP Adresi Ping Testi ve Ulaşılamayanları Listeleme
+
+Bu Python uygulaması, belirtilen IP adreslerine sürekli olarak ping atar ve ulaşılmayan IP adreslerini arka planda sürekli olarak listelemenize olanak tanır. Uygulama, 512 adet IP adresini aynı anda eş zamanlı olarak pingler.
+
+## Özellikler
+
+- **Eş Zamanlı Ping**: 512 adet IP adresine aynı anda ping atılır.
+- **Ulaşılamayan IP Listesi**: Ulaşılamayan IP adresleri anında listelenir.
+- **Sürekli Çalışma**: Uygulama sürekli olarak çalışır ve ping atma işlemini arka planda sürdürür.
+- **Threading Kullanımı**: Eş zamanlı olarak çalışabilmesi için Python'un `threading` modülü kullanılmıştır.
+
+## Başlangıç
+
+Aşağıdaki adımları izleyerek projeyi kurabilir ve çalıştırabilirsiniz.
+
+### 1. Gerekli Bağımlılıkların Kurulması
+Uygulamayı çalıştırmadan önce, gerekli Python kütüphanelerini yüklemeniz gerekecek.
+
+#### a. Python 3 ve pip'in yüklü olduğundan emin olun
+
+Python ve pip yüklü değilse, aşağıdaki komutları kullanarak yükleyebilirsiniz:
+sudo apt update
+sudo apt install python3 python3-pip
+
+##Gerekli Python Kütüphanesini Yükleyin
+pip install ping3
+
+##ping_monitor.py Dosyasını Çalıştırma
+python3 ping_monitor.py
+
+## Proje Yapısı
+ping_monitor/
+│
+├── ping_monitor.py        # Ana Python script dosyası
+├── README.md              # Proje açıklama dosyası
+└── requirements.txt       # Gerekli Python kütüphaneleri (isteğe bağlı)
+
+##Özelleştirme
+
+IP Adreslerini Değiştirme: ping_monitor.py dosyasındaki ip_addresses listesinde bulunan IP aralığını ihtiyacınıza göre değiştirebilirsiniz. Örneğin, 192.168.1.x adreslerini değiştirebilirsiniz.
+Ping Aralığı: Ping atma aralığını değiştirmek için time.sleep(1) kısmını istediğiniz saniye cinsinden değiştirebilirsiniz.
+
+
+Olası Hatalar ve Çözümler
+PermissionError: Operation not permitted: Eğer ping komutları sırasında "operation not permitted" hatası alıyorsanız, bu sorunu çözmek için sudo kullanarak scripti çalıştırmayı deneyin:
+
+sudo python3 ping_monitor.py
+Ping3 Kütüphanesi İle İlgili Hata: Eğer ping3 kütüphanesi ile ilgili bir hata alırsanız, bu kütüphaneyi yeniden yükleyerek çözebilirsiniz:
+pip install --upgrade ping3
+
